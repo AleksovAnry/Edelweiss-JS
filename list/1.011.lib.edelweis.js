@@ -1,6 +1,6 @@
 // Javascript executable.
 // level(0)
-// Javascript executable library v.1.011-
+// Javascript executable library v.1.011
 // SET PROduction Europe © 15.03.2014.
 
 var edel={n:'edelwiss',
