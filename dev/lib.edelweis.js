@@ -306,7 +306,7 @@ var edel={a:[],
 							l=h.length;
 							z=(w/100)*r;
 							x=W<((w-z)*2)?1:(W/(w-z)).toFixed(0);
-							y=Math.floor(l-Math.floor(l/x)*x;)
+							y=Math.floor(l-Math.floor(l/x)*x);
 							if(x/2>y&&y>0&&l>1){x=x-1;y=y+1;}
 							l-y>0?D(0,l-y,h,W/x):false;
 							y>0?D(l-y,l,h,W/y):D(0,l,h,W/y);
