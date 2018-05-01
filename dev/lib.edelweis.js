@@ -503,15 +503,15 @@ var edel={a:[],
 						for(j=0;j<F.length;j++){
 							y[j].onclick=function(){
 									f.v=this.s;
-									W(F,f,y,this.s);
-									H0();
-									P0();
-									I0();
-									U0();
 									for(s=0;s<x.length;s++){
 										edel.w.clearTimeout(x[s]);
 									}
 									J(F,f,y,this.s);
+									H0();
+									P0();
+									I0();
+									U0();
+									
 							}
 						}
 					};
