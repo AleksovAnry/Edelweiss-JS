@@ -506,6 +506,10 @@ var edel={a:[],
 										edel.w.clearTimeout(x[s]);
 									}
 									f.v=this.s;
+									console.log('F='+F)
+									console.log('f='+f)
+									console.log('y='+y)
+									console.log('this.s='+this.s)
 									W(F,f,y,this.s);
 									H0();
 									P0();
