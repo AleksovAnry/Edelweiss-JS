@@ -416,7 +416,7 @@ var edel={a:[],
 					b=z+'PHide',
 					c=z+'IHide',
 					d=z+'UHide',
-					w=z+'animated',
+					w=z+'Animated',
 					q=edel.cop(e),
 
 					N=function(F,f,k){
@@ -504,6 +504,7 @@ var edel={a:[],
 							y[j].onclick=function(){
 									f.v=this.i;
 									W(F,f,y,this.i);
+									J(F,f,y);
 									H0();
 									P0();
 									I0();
