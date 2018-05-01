@@ -485,17 +485,17 @@ var edel={a:[],
 							
 							W(F,f,y,L);
 							
-							edel.w.setTimeout(H0,r*1);
-							edel.w.setTimeout(P0,r*2);
-							edel.w.setTimeout(I0,r*3);
-							edel.w.setTimeout(U0,r*4);
+							edel.sld.push(setTimeout(H0,r*1));
+							edel.sld.push(setTimeout(P0,r*2));
+							edel.sld.push(setTimeout(I0,r*3));
+							edel.sld.push(setTimeout(U0,r*4));
 			
-							edel.w.setTimeout(H1,T-(r*1));
-							edel.w.setTimeout(P1,T-(r*2));
-							edel.w.setTimeout(I1,T-(r*3));
-							edel.w.setTimeout(U1,T-(r*4));
+							edel.sld.push(setTimeout(H1,T-(r*1)));
+							edel.sld.push(setTimeout(P1,T-(r*2)));
+							edel.sld.push(setTimeout(I1,T-(r*3)));
+							edel.sld.push(setTimeout(U1,T-(r*4)));
 							
-							edel.w.setTimeout(function(){J(F,f,y);},T);
+							edel.sld.push(setTimeout(function(){J(F,f,y);},T));
 						}
 						
 						J(F,f,y);
