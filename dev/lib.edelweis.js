@@ -479,7 +479,7 @@ var edel={a:[],
 						U1=function(){edel.rec(u,{show:d,hide:D});}
 						
 						J=function(F,f,y,L){
-							L=f.v;
+							L=?L:f.v:L;
 							L<F.length-1?L++:L=0;
 							f.v=L;
 							
@@ -510,12 +510,12 @@ var edel={a:[],
 									console.log('f='+f)
 									console.log('y='+y)
 									console.log('this.s='+this.s)
-									W(F,f,y,this.s);
+									//W(F,f,y,this.s);
+									J(F,f,y,this.s);
 									H0();
 									P0();
 									I0();
 									U0();
-									//J(F,f,y);
 							}
 						}
 					};
