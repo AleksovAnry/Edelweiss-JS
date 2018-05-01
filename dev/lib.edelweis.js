@@ -294,7 +294,7 @@ var edel={a:[],
 						D=function(I,K,X,Y){
 							if(I>-1&&K>0){
 								for(i=I;i<K;i++){
-									X[i].style.width=Y-b*2-0.1+'px';
+									X[i].style.width=Y-b*2-0.5+'px';
 									X[i].style.borderWidth=b+'px';
 									//X[i].innerHTML=Y+'px';
 								}
