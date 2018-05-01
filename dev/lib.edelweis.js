@@ -468,15 +468,15 @@ var edel={a:[],
 							}
 						}
 
-						H0=function(){edel.rec(h,{show:A,hide:a});}
-						P0=function(){edel.rec(p,{show:B,hide:b});}
-						I0=function(){edel.rec(i,{show:C,hide:c});}
-						U0=function(){edel.rec(u,{show:D,hide:d});}
+						H0=function(){edel.rec(h,{show:A,hide:a}); console.log(id);}
+						P0=function(){edel.rec(p,{show:B,hide:b}); console.log(id);}
+						I0=function(){edel.rec(i,{show:C,hide:c}); console.log(id);}
+						U0=function(){edel.rec(u,{show:D,hide:d}); console.log(id);}
 						
-						H1=function(){edel.rec(h,{show:a,hide:A});}
-						P1=function(){edel.rec(p,{show:b,hide:B});}
-						I1=function(){edel.rec(i,{show:c,hide:C});}
-						U1=function(){edel.rec(u,{show:d,hide:D});}
+						H1=function(){edel.rec(h,{show:a,hide:A}); console.log(id);}
+						P1=function(){edel.rec(p,{show:b,hide:B}); console.log(id);}
+						I1=function(){edel.rec(i,{show:c,hide:C}); console.log(id);}
+						U1=function(){edel.rec(u,{show:d,hide:D}); console.log(id);}
 						
 						J=function(F,f,y,L){
 							L=f.v;
@@ -495,7 +495,7 @@ var edel={a:[],
 							setTimeout(I1,T-(r*3));
 							setTimeout(U1,T-(r*4));
 							
-							setTimeout(function(){J(F,f,y);},T);
+							setTimeout(function(){J(F,f,y); console.log(id);},T);
 						}
 						
 						J(F,f,y);
