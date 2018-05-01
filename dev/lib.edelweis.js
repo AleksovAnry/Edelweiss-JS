@@ -502,11 +502,11 @@ var edel={a:[],
 						
 						for(j=0;j<F.length;j++){
 							y[j].onclick=function(){
-									f.v=this.s;
 									for(s=0;s<x.length;s++){
 										edel.w.clearTimeout(x[s]);
 									}
-									J(F,f,y,this.s-1);
+									f.v=this.s;
+									J(F,f,y);
 									H0();
 									P0();
 									I0();
