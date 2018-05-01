@@ -395,7 +395,7 @@ var edel={a:[],
 				}
 		},
 		
-//	edel.sld('.slideBox',{slide:'.slide',head:'.slideHead',paragraph:'.slideParagraph',image:'.slideImage',unordered:'.slideUnordered',navs:true},10000,500);
+1//	edel.sld('.slideBox',{slide:'.slide',head:'.slideHead',paragraph:'.slideParagraph',image:'.slideImage',unordered:'.slideUnordered',navs:true},10000,500);
 		sld:function(e,w,T,r){
 				if(!e){return;}
 				r=r?r:400;
@@ -511,7 +511,7 @@ var edel={a:[],
 									for(s=0;s<x.length;s++){
 										edel.w.clearTimeout(x[s]);
 									}
-									J(F,f,y);
+									J(F,f,y,this.s);
 							}
 						}
 					};
