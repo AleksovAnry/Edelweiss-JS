@@ -479,7 +479,7 @@ var edel={a:[],
 						U1=function(){edel.rec(u,{show:d,hide:D});}
 						
 						J=function(F,f,y,L){
-							L=?L:f.v:L;
+							L=L?f.v:L;
 							L<F.length-1?L++:L=0;
 							f.v=L;
 							
