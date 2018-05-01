@@ -400,7 +400,7 @@ var edel={a:[],
 				if(!e){return;}
 				r=r?r:400;
 				T=T?T:10000;
-				var s,o,l,
+				var s,o,l,x=[],
 					H=w.head?w.head:'h2',
 					S=w.slide?w.slide:'a',
 					I=w.image?w.image:'img',
@@ -468,15 +468,15 @@ var edel={a:[],
 							}
 						}
 
-						H0=function(){edel.rec(h,{show:A,hide:a}); console.log(id);}
-						P0=function(){edel.rec(p,{show:B,hide:b}); console.log(id);}
-						I0=function(){edel.rec(i,{show:C,hide:c}); console.log(id);}
-						U0=function(){edel.rec(u,{show:D,hide:d}); console.log(id);}
+						H0=function(){edel.rec(h,{show:A,hide:a});}
+						P0=function(){edel.rec(p,{show:B,hide:b});}
+						I0=function(){edel.rec(i,{show:C,hide:c});}
+						U0=function(){edel.rec(u,{show:D,hide:d});}
 						
-						H1=function(){edel.rec(h,{show:a,hide:A}); console.log(id);}
-						P1=function(){edel.rec(p,{show:b,hide:B}); console.log(id);}
-						I1=function(){edel.rec(i,{show:c,hide:C}); console.log(id);}
-						U1=function(){edel.rec(u,{show:d,hide:D}); console.log(id);}
+						H1=function(){edel.rec(h,{show:a,hide:A});}
+						P1=function(){edel.rec(p,{show:b,hide:B});}
+						I1=function(){edel.rec(i,{show:c,hide:C});}
+						U1=function(){edel.rec(u,{show:d,hide:D});}
 						
 						J=function(F,f,y,L){
 							L=f.v;
@@ -485,17 +485,17 @@ var edel={a:[],
 							
 							W(F,f,y,L);
 							
-							setTimeout(H0,r*1);
-							setTimeout(P0,r*2);
-							setTimeout(I0,r*3);
-							setTimeout(U0,r*4);
+							x[0]=edel.w.setTimeout(H0,r*1);
+							x[1]=edel.w.setTimeout(P0,r*2);
+							x[2]=edel.w.setTimeout(I0,r*3);
+							x[3]=edel.w.setTimeout(U0,r*4);
 			
-							setTimeout(H1,T-(r*1));
-							setTimeout(P1,T-(r*2));
-							setTimeout(I1,T-(r*3));
-							setTimeout(U1,T-(r*4));
+							x[4]=edel.w.setTimeout(H1,T-(r*1));
+							x[5]=edel.w.setTimeout(P1,T-(r*2));
+							x[6]=edel.w.setTimeout(I1,T-(r*3));
+							x[7]=edel.w.setTimeout(U1,T-(r*4));
 							
-							setTimeout(function(){J(F,f,y); console.log(id);},T);
+							x[8]=edel.w.setTimeout(function(){J(F,f,y);},T);
 						}
 						
 						J(F,f,y);
@@ -508,6 +508,10 @@ var edel={a:[],
 									P0();
 									I0();
 									U0();
+									for(s=0;s<x.length;s++){
+										edel.w.clearTimeout(x[s]);
+									}
+									J(F,f,y);
 							}
 						}
 					};
