@@ -506,12 +506,12 @@ var edel={a:[],
 										edel.w.clearTimeout(x[s]);
 									}
 									f.v=this.s;
-									J(F,f,y);
+									W(F,f,y,this.s);
 									H0();
 									P0();
 									I0();
 									U0();
-									
+									J(F,f,y);
 							}
 						}
 					};
