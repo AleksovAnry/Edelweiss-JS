@@ -504,7 +504,6 @@ var edel={a:[],
 							y[j].onclick=function(){
 									f.v=this.i;
 									W(F,f,y,this.i);
-									J(F,f,y);
 									H0();
 									P0();
 									I0();
