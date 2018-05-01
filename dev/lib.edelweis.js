@@ -400,7 +400,7 @@ var edel={a:[],
 				if(!e){return;}
 				r=r?r:400;
 				T=T?T:10000;
-				var i,o,l,
+				var s,o,l,
 					H=w.head?w.head:'h2',
 					S=w.slide?w.slide:'a',
 					I=w.image?w.image:'img',
@@ -421,17 +421,17 @@ var edel={a:[],
 
 					N=function(F,f,k){
 						k=edel.d.createElement('div');
-						k.className=z+'Navs Nid-'+f.i;
+						k.className=z+'Navs Nid-'+f.s;
 						for(o=0;o<F.length;o++){
 							m=edel.d.createElement('div');
-							m.className=z+'Nav Nid-'+f.i+'-'+o;
-							m.i=o;
+							m.className=z+'Nav Nid-'+f.s+'-'+o;
+							m.s=o;
 							k.appendChild(m);
 						}
 						f.appendChild(k);
 					},
 		
-					Q=function(F,f,y,h,p,g,t){
+					Q=function(F,f,y,h,p,i,u){
 					
 						y=f.querySelectorAll('.'+z+'Nav');
 
@@ -456,12 +456,12 @@ var edel={a:[],
 								}else{
 									h=F[l].querySelector(H);
 									p=F[l].querySelector(P);
-									g=F[l].querySelector(I);
-									t=F[l].querySelector(U);
+									i=F[l].querySelector(I);
+									u=F[l].querySelector(U);
 									edel.rec(h,{show:'*',hide:a});
 									edel.rec(p,{show:'*',hide:b});
-									edel.rec(g,{show:'*',hide:c});
-									edel.rec(t,{show:'*',hide:d});
+									edel.rec(i,{show:'*',hide:c});
+									edel.rec(u,{show:'*',hide:d});
 									F[l].style.display='block';
 									edel.rec(y[l],{show:z+'ActiveNav',hide:'*'});
 								}
@@ -470,13 +470,13 @@ var edel={a:[],
 
 						H0=function(){edel.rec(h,{show:A,hide:a});}
 						P0=function(){edel.rec(p,{show:B,hide:b});}
-						I0=function(){edel.rec(g,{show:C,hide:c});}
-						U0=function(){edel.rec(t,{show:D,hide:d});}
+						I0=function(){edel.rec(i,{show:C,hide:c});}
+						U0=function(){edel.rec(u,{show:D,hide:d});}
 						
 						H1=function(){edel.rec(h,{show:a,hide:A});}
 						P1=function(){edel.rec(p,{show:b,hide:B});}
-						I1=function(){edel.rec(g,{show:c,hide:C});}
-						U1=function(){edel.rec(t,{show:d,hide:D});}
+						I1=function(){edel.rec(i,{show:c,hide:C});}
+						U1=function(){edel.rec(u,{show:d,hide:D});}
 						
 						J=function(F,f,y,L){
 							L=f.v;
@@ -485,25 +485,25 @@ var edel={a:[],
 							
 							W(F,f,y,L);
 							
-							edel.sld.push(setTimeout(H0,r*1));
-							edel.sld.push(setTimeout(P0,r*2));
-							edel.sld.push(setTimeout(I0,r*3));
-							edel.sld.push(setTimeout(U0,r*4));
+							setTimeout(H0,r*1);
+							setTimeout(P0,r*2);
+							setTimeout(I0,r*3);
+							setTimeout(U0,r*4);
 			
-							edel.sld.push(setTimeout(H1,T-(r*1)));
-							edel.sld.push(setTimeout(P1,T-(r*2)));
-							edel.sld.push(setTimeout(I1,T-(r*3)));
-							edel.sld.push(setTimeout(U1,T-(r*4)));
+							setTimeout(H1,T-(r*1));
+							setTimeout(P1,T-(r*2));
+							setTimeout(I1,T-(r*3));
+							setTimeout(U1,T-(r*4));
 							
-							edel.sld.push(setTimeout(function(){J(F,f,y);},T));
+							setTimeout(function(){J(F,f,y);},T);
 						}
 						
 						J(F,f,y);
 						
 						for(j=0;j<F.length;j++){
 							y[j].onclick=function(){
-									f.v=this.i;
-									W(F,f,y,this.i);
+									f.v=this.s;
+									W(F,f,y,this.s);
 									H0();
 									P0();
 									I0();
@@ -513,11 +513,11 @@ var edel={a:[],
 					};
 
 				if(q.length>0){
-					for(i=0;i<q.length;i++){
-						q[i].v=-1;
-						q[i].i=i;
-						n?N(q[i].querySelectorAll(S),q[i]):!1;
-						Q(q[i].querySelectorAll(S),q[i]);
+					for(s=0;s<q.length;s++){
+						q[s].v=-1;
+						q[s].s=s;
+						n?N(q[s].querySelectorAll(S),q[s]):!1;
+						Q(q[s].querySelectorAll(S),q[s]);
 					}
 				}
 		},
