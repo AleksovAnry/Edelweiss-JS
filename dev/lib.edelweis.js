@@ -144,23 +144,23 @@ var edel={a:[],
 				return x;	
 		},
 
-//	edel.xhr(link,{data,async,type},callback);
+//	edel.xhr(link,{data,async,type,content},callback);
 		xhr:function(l,d,c){
 				if(!l){return;}
 				
 				var r,t=d.type?d.type:'GET',					
 					a=d.async?d.async:true,
+					w=d.content?d.content:'application/x-www-form-urlencoded',
 					x=new XMLHttpRequest();
 				
 				edel.iof(t,'GET')?(l=l+'?'+d.data,r=null):(r=d.data);
 				
 				x.open(t,l,a);
-				x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+				x.setRequestHeader('Content-Type',w);
 				x.send(r);
 				x.onreadystatechange=function(){
 					console.log(x.readyState+"-"+x.status)
 					if(x.readyState===4&&x.status===200){
-						
 						x?c&&typeof(c)==='function'?c.call(x):false:false;
 					}
 				}
