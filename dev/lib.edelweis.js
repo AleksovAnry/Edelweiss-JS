@@ -121,7 +121,7 @@ var edel={a:[],
 				if(!l){return;}
 
 				var o,h,u,
-					a=a.async?a.async:true,
+					a=d.async?d.async:true,
 					t=d.type?d.type:'GET',
 					e=escape(JSON.stringify(d.data)),
 					x=new XMLHttpRequest();
