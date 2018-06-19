@@ -116,13 +116,13 @@ var edel={a:[],
 				return d;
 		},
 
-//	edel.jsn(link,{data,async,type},callback);	
+//	edel.jsn(link,{data,async,method},callback);	
 		jsn:function(l,d,c){
 				if(!l){return;}
 
 				var o,h,u,
 					a=d.async?d.async:true,
-					t=d.type?d.type:'GET',
+					t=d.method?d.method:'GET',
 					e=escape(JSON.stringify(d.data)),
 					x=new XMLHttpRequest();
 				if(typeof(d.data)==='object'){
@@ -144,22 +144,23 @@ var edel={a:[],
 				return x;	
 		},
 
-//	edel.xhr(link,{data,async,type,content},callback);
+//	edel.xhr(link,{data,async,method,type},callback);
 		xhr:function(l,d,c){
 				if(!l){return;}
 				
-				var r,t=d.type?d.type:'GET',					
-					a=d.async?d.async:true,
-					w=d.content?d.content:'application/x-www-form-urlencoded',
+				var r,a=d.async?d.async:true,
+					m=d.method?d.method:'GET',					
+					t=d.type?d.type:'text-plain',
 					x=new XMLHttpRequest();
 				
-				edel.iof(t,'GET')?(l=l+'?'+d.data,r=null):(r=d.data);
+				edel.iof(m,'GET')?(l=l+'?'+d.data,r=null):(r=d.data);
 				
-				x.open(t,l,a);
-				x.setRequestHeader('Content-Type',w);
+				x.open(m,l,a);
+				x.setRequestHeader('Content-Type',t);
 				x.send(r);
 				x.onreadystatechange=function(){
 					console.log(x.readyState+"-"+x.status)
+					console.log(x.responseText)
 					if(x.readyState===4&&x.status===200){
 						x?c&&typeof(c)==='function'?c.call(x):false:false;
 					}
@@ -167,12 +168,12 @@ var edel={a:[],
 				return x;	
 		},
 
-//	edel.frm(link,{data,async,type});
+//	edel.frm(link,{data,async,method});
 		frm:function(l,d,c){
 				if(!l){return;}
 				
 				var k,h,u=d.data?l+'?'+d.data:l,
-					t=d.type?d.type:'POST',
+					t=d.method?d.method:'POST',
 					f=edel.d.createElement("form");
 				
 			    f.setAttribute("method",t);
