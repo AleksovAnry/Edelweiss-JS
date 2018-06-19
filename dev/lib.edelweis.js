@@ -134,7 +134,6 @@ var edel={a:[],
 				}
 				x.open(t,u,a);
 				x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-				x.setRequestHeader('Access-Control-Allow-Origin','*');
 				x.send(null);
 				x.onreadystatechange=function(){
 					if(x.readyState===4&&x.status===200){
