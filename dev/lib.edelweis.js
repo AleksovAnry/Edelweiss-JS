@@ -133,6 +133,7 @@ var edel={a:[],
 					u=l+h;
 				}
 				x.open(t,u,a);
+				x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 				x.setRequestHeader('Access-Control-Allow-Origin','*');
 				x.send(null);
 				x.onreadystatechange=function(){
