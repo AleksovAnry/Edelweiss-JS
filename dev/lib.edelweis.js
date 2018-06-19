@@ -163,8 +163,7 @@ var edel={a:[],
 					}
 				}
 				x.open(m,l,a);
-				x.withCredentials=true;
-				x.setRequestHeader('Accept','application/json');
+				x.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 			//	x.setRequestHeader('Content-Type',t);
 				x.send(r);
 				return x;	
