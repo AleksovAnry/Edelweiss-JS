@@ -155,8 +155,6 @@ var edel={a:[],
 				
 				edel.iof(m,'GET')?(l=l+'?'+d.data,r=null):(r=d.data);
 				
-				
-				//x.setRequestHeader('Content-Type',t);
 				x.onreadystatechange=function(){
 					console.log(x.readyState+"-"+x.status)
 					console.log(x.responseText)
@@ -165,6 +163,9 @@ var edel={a:[],
 					}
 				}
 				x.open(m,l,a);
+				x.withCredentials=true;
+				x.setRequestHeader('Accept','application/json');
+			//	x.setRequestHeader('Content-Type',t);
 				x.send(r);
 				return x;	
 		},
