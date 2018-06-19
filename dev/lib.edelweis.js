@@ -116,7 +116,7 @@ var edel={a:[],
 				return d;
 		},
 
-//	edel.jsn(link,{data,async,method},callback);	
+//	edel.jsn(link,{data,async,method},callback);
 		jsn:function(l,d,c){
 				if(!l){return;}
 
@@ -156,8 +156,8 @@ var edel={a:[],
 				edel.iof(m,'GET')?(l=l+'?'+d.data,r=null):(r=d.data);
 				
 				x.open(m,l,a);
+				x.withCredentials=!0;
 				x.setRequestHeader('Content-Type',t);
-				x.send(r);
 				x.onreadystatechange=function(){
 					console.log(x.readyState+"-"+x.status)
 					console.log(x.responseText)
@@ -165,6 +165,7 @@ var edel={a:[],
 						x?c&&typeof(c)==='function'?c.call(x):false:false;
 					}
 				}
+				x.send(r);
 				return x;	
 		},
 
