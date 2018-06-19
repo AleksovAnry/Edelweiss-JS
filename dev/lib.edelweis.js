@@ -133,7 +133,7 @@ var edel={a:[],
 					u=l+h;
 				}
 				x.open(t,u,a);
-				x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+				x.setRequestHeader('Content-Type','application/json');
 				x.send(null);
 				x.onreadystatechange=function(){
 					if(x.readyState===4&&x.status===200){
@@ -159,6 +159,7 @@ var edel={a:[],
 				x.send(r);
 				x.onreadystatechange=function(){
 					if(x.readyState===4&&x.status===200){
+						console.log(1)
 						x?c&&typeof(c)==='function'?c.call(x):false:false;
 					}
 				}
