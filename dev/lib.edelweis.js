@@ -158,8 +158,9 @@ var edel={a:[],
 				x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 				x.send(r);
 				x.onreadystatechange=function(){
+					console.log(x.readyState+"-"+x.status)
 					if(x.readyState===4&&x.status===200){
-						console.log(1)
+						
 						x?c&&typeof(c)==='function'?c.call(x):false:false;
 					}
 				}
