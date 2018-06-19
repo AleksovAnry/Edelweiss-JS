@@ -150,14 +150,13 @@ var edel={a:[],
 				
 				var r,a=d.async?d.async:true,
 					m=d.method?d.method:'GET',					
-					t=d.type?d.type:'text-plain',
+					t=d.type?d.type:'application/x-www-form-urlencoded',
 					x=new XMLHttpRequest();
 				
 				edel.iof(m,'GET')?(l=l+'?'+d.data,r=null):(r=d.data);
 				
-				x.open(m,l,a);
-				x.withCredentials=!0;
-				x.setRequestHeader('Content-Type',t);
+				
+				//x.setRequestHeader('Content-Type',t);
 				x.onreadystatechange=function(){
 					console.log(x.readyState+"-"+x.status)
 					console.log(x.responseText)
@@ -165,6 +164,7 @@ var edel={a:[],
 						x?c&&typeof(c)==='function'?c.call(x):false:false;
 					}
 				}
+				x.open(m,l,a);
 				x.send(r);
 				return x;	
 		},
