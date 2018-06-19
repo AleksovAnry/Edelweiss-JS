@@ -155,14 +155,13 @@ var edel={a:[],
 				
 				edel.iof(m,'GET')?(l=l+'?'+d.data,r=null):(r=d.data);
 				
-				x.onload=function(){console.log(x.responseText)}
-			//	x.onreadystatechange=function(){
-			//		console.log(x.readyState+"-"+x.status)
-			//		console.log(x.responseText)
-			//		if(x.readyState===4&&x.status===200){
-			//			x?c&&typeof(c)==='function'?c.call(x):false:false;
-			//		}
-			//	}
+				x.onreadystatechange=function(){
+					console.log(x.readyState+"-"+x.status)
+					console.log(x.responseText)
+					if(x.readyState===4&&x.status===200){
+						x?c&&typeof(c)==='function'?c.call(x):false:false;
+					}
+				}
 				x.open(m,l,a);
 				x.setRequestHeader('Content-Type',t);
 				x.send(r);
