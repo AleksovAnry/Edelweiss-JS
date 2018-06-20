@@ -122,7 +122,7 @@ var edel={a:[],
 
 				var o,h,u,
 					a=d.async?d.async:true,
-					t=d.method?d.method:'GET',
+					m=d.method?d.method:'GET',
 					e=escape(JSON.stringify(d.data)),
 					x=new XMLHttpRequest();
 				if(typeof(d.data)==='object'){
@@ -132,15 +132,16 @@ var edel={a:[],
 					h=edel.djb(escape(d.data+new Date));
 					u=l+h;
 				}
-				x.open(t,u,a);
-				x.setRequestHeader('Content-Type','application/json');
-				x.send(null);
+
 				x.onreadystatechange=function(){
 					if(x.readyState===4&&x.status===200){
 						o=x.response.split(h);
 						if(o[1]){c.call(JSON.parse(o[1]));}
 					}
 				}
+				x.open(m,u,a);
+				x.setRequestHeader('Content-Type','application/json');
+				x.send(null);
 				return x;	
 		},
 
